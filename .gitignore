@@ -128,3 +128,6 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+ai-travel-guide-392113-91acce64e9f4.json
+places-image.jpg

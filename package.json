@@ -1,0 +1,27 @@
+{
+    "name": "travelguide-miner",
+    "version": "1.0.0",
+    "description": "application to generate travel reviews using chatgpt and save them in mongodb",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "country": "node ./src/jobs/get-countries.mjs",
+        "country-description": "node ./src/jobs/get-country-description.mjs",
+        "country-cities": "node ./src/jobs/get-country-cities.mjs",
+        "city-activities": "node ./src/jobs/get-city-activities.mjs",
+        "city-best-months": "node ./src/jobs/get-city-best-months.mjs",
+        "city-temprature": "node ./src/jobs/get-city-temprature.mjs",
+        "city-budget": "node ./src/jobs/get-city-budget.mjs",
+        "get-images": "node ./src/jobs/get-images.mjs",
+        "get-images-activities": "node ./src/jobs/get-images-activities.mjs"
+    },
+    "author": "horstjahns@gmail.com",
+    "license": "ISC",
+    "dependencies": {
+        "@google-cloud/storage": "6.11.0",
+        "chatgpt": "^4.7.2",
+        "dotenv": "^16.0.3",
+        "mongodb": "^5.1.0",
+        "node-fetch": "^3.3.1"
+    }
+}
