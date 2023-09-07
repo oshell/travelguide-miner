@@ -10,15 +10,17 @@ const dbTimeout = 200;
 const useCache = true;
 const gptApiKey = process.env.OPENAI_API_KEY;
 const dbPassword = process.env.MONGO_DB_ATLAS_PW;
+const dbUser = process.env.MONGO_DB_ATLAS_USER;
+const dbCluster = process.env.MONGO_DB_ATLAS_CLUSTER;
 
-const dbName = 'ai-travel-guide-db';
+const dbName = process.env.MONGO_DB_ATLAS_NAME;
 const collectionNameCountries = 'countries';
 const collectionNameCities = 'cities';
 const collectionNameCache = 'gpt-query-cache';
 const collectionNameErrors = 'gpt-query-errors';
 const uidKeys = ['name'];
 // Replace the following with your MongoDB Atlas connection string
-const dbUri = `mongodb+srv://admin:${dbPassword}@ai-travel-guide-cluster.yurozgs.mongodb.net/?retryWrites=true&w=majority`;
+const dbUri = `mongodb+srv://${dbUser}:${dbPassword}@${dbCluster}/?retryWrites=true&w=majority`;
 
 /** @var MongoClient */
 const mongoClientCountries = new MongoClient(
